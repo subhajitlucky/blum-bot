@@ -58,7 +58,7 @@ const recipients = [
 ];
 
 // Message content
-const message = 'BLUM Screenshot Telegram Group Send 2 Times in a Day.';
+const message = 'Testing Blum Screenshot Bot. Made to Remind you to send screenshot in Telegram BLUM Pool Group because you are forgetting it again and again and again and again.....';
 
 // Function to send messages with delay
 const sendMessagesWithDelay = async (recipients, message, delay) => {
