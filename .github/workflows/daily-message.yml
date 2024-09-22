@@ -1,0 +1,28 @@
+name: Send WhatsApp Messages
+
+on:
+  schedule:
+    - cron: '30 0 * * *'   # 6 AM IST (00:30 UTC)
+    - cron: '0 16 * * *'    # 9:30 PM IST (16:00 UTC)
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Specify your Node.js version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run the bot
+        run: node bot.js
+        env:
+          TWILIO_SID: ${{ secrets.TWILIO_SID }}  # Use secrets for sensitive data
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
