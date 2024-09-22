@@ -3,8 +3,9 @@ require('dotenv').config();
 const twilio = require('twilio');
 
 // Your Twilio account credentials
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
+const accountSid = process.env.TWILIO_SID; // Should match the GitHub secret key
+const authToken = process.env.TWILIO_AUTH_TOKEN; // Should match the GitHub secret key
+
 
 // Create a Twilio client
 const client = twilio(accountSid, authToken);
@@ -58,7 +59,7 @@ const recipients = [
 ];
 
 // Message content
-const message = 'Blum Screenshot Bot. Made to Remind you to send screenshot in Telegram BLUM Pool Group because you are forgetting it again and again and again and again.....';
+const message = 'Blum Screenshot Bot. Made to Remind you to send screenshot 2 times in Telegram BLUM Pool Group because you are forgetting it again and again and again and again.....';
 
 // Function to send messages with delay
 const sendMessagesWithDelay = async (recipients, message, delay) => {
