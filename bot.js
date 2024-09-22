@@ -58,7 +58,7 @@ const recipients = [
 ];
 
 // Message content
-const message = 'Testing WhatsApp Bot for BLUM Screenshot';
+const message = 'BLUM Screenshot Telegram Group Send 2 Times in a Day.';
 
 // Function to send messages with delay
 const sendMessagesWithDelay = async (recipients, message, delay) => {
