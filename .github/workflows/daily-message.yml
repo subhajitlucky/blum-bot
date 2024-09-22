@@ -21,8 +21,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run the bot
-        run: node bot.js
-        env:
-          TWILIO_SID: ${{ secrets.TWILIO_SID }}  # Use secrets for sensitive data
-          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+      - name: Create .env file
+        run: |
+          echo "TWILIO_SID=${{ secrets.TWILIO_SID }}" > .env
+          echo "TWILIO_AUTH_TOKEN=${{ secrets.TWILIO_AUTH_TOKEN }}" >> .env
+
+      - name: Source .env file and run the bot
+        run: |
+          source .env
+          node bot.js
